@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Joaquin Villagran
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component, Fragment } from "react";
+import "./App.css";
+//Componentees de tipo CLASE
+//Componentes de tipo Function,dummy, stateless
+//Las class tienen un metodo particular llamado render()
+// un fragment se puede escribir <> </> o bien <freagment>
+class App extends React.Component {
+  render() {
+    return (
+      <>
+        <nav>
+          <ul>
+            <li>
+              <h4>Supermecado JT</h4>
+            </li>
+            <li>
+              <a className="active" href="#home">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#news">Noticias</a>
+            </li>
+            <li>
+              <a href="#contact">Contacto</a>
+            </li>
+            <li>
+              <a href="#about">Acerca de</a>
+            </li>
+          </ul>
+        </nav>
+        <h1>Bienvenido a mi pagina</h1>
+      </> // <div> </div> o React.Fragment && usar para mas de una etiqueta
+    );
+  }
 }
-
 export default App;
