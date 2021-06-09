@@ -1,35 +1,23 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import "./App.css";
+//Componentes
+import NavBar from './components/Header/NavBar/NavBar';
+import ItemListContainer from './components/body/ItemListContainer/ItemListContainer';
+
+//Semantic UI
+
 //Componentees de tipo CLASE
 //Componentes de tipo Function,dummy, stateless
 //Las class tienen un metodo particular llamado render()
 // un fragment se puede escribir <> </> o bien <freagment>
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
       <>
-        <nav>
-          <ul>
-            <li>
-              <h4>Supermecado JT</h4>
-            </li>
-            <li>
-              <a className="active" href="#home">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#news">Noticias</a>
-            </li>
-            <li>
-              <a href="#contact">Contacto</a>
-            </li>
-            <li>
-              <a href="#about">Acerca de</a>
-            </li>
-          </ul>
-        </nav>
-        <h1>Bienvenido a mi pagina</h1>
+        <NavBar/>
+        <ItemListContainer title={'Bienvenido'}/>
+        <ItemListContainer title={'Saludo 2'}/>
+
       </> // <div> </div> o React.Fragment && usar para mas de una etiqueta
     );
   }
