@@ -3,6 +3,7 @@ import "./App.css";
 //Componentes
 import NavBar from './components/Header/NavBar/NavBar';
 import ItemListContainer from './components/body/ItemListContainer/ItemListContainer';
+import ItemCount from './components/body/ItemCount/ItemCount';
 
 //Semantic UI
 
@@ -17,8 +18,9 @@ class App extends Component {
         <NavBar/>
         <ItemListContainer title={'Bienvenido'}/>
         <ItemListContainer title={'Saludo 2'}/>
+        <ItemCount/>
 
-      </> // <div> </div> o React.Fragment && usar para mas de una etiqueta
+      </>
     );
   }
 }

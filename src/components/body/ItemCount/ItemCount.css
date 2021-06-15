@@ -1,0 +1,25 @@
+.centrar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    font-size: 24px;
+    border: 10px double white;
+    border-radius: 100rem;
+    padding: 2px;
+    margin-left: 700px;
+    margin-right: 700px;
+    background-color: rgb(81, 163, 189);
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    
+}
+.span-counter {
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    font-size: 30px;
+  }
