@@ -1,37 +1,36 @@
-import React, { Component } from 'react'
-import { Button } from 'semantic-ui-react'
-import './ItemCount.css'
+import React, { useState } from "react";
+import { Button } from "semantic-ui-react";
 
-class ItemCount extends Component {
-    constructor() {
-        super();
-        this.state = {
-          counter: 0,
-        };
-    
-        //this.handleCounterUp = this.handleCounterUp.bind(this);
-      }
-    handleCounterUp = () => {
-        this.setState({ counter: this.state.counter + 1 });
-    }
-    handleCounterDown = () => {
-        this.setState({ counter: this.state.counter - 1 });
-    }
-    render() {
-        return (
-            <div className='centrar'>
-          <h3>CONTADOR</h3>
-          <div className='btn'>
-            <Button  positive onClick={this.handleCounterUp} >
-              +
-            </Button>
-            <span className='span-counter'>{this.state.counter}</span>
-            <Button negative onClick={this.handleCounterDown}>
-              -
-            </Button>
-          </div>
+import "./ItemCount.css";
+
+function ItemCount() {
+  const [number, setState] = useState([]) 
+  const handleUp = () => {
+    setState(number + 1);
+  };
+
+  const handleDown = () => {
+    setState(number - 1);
+  }; 
+
+
+
+  return (
+    <>
+      <div className="centrar">
+        <h3>CONTADOR</h3>
+        <div className="btn">
+          <Button negative onClick={handleDown}>
+            -
+          </Button>
+
+          <p className="span-counter">{number}</p>
+          <Button positive onClick={handleUp}>
+            +
+          </Button>
         </div>
-        )
-    }
+      </div>
+    </>
+  );
 }
 export default ItemCount;

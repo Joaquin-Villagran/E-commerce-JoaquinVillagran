@@ -17,7 +17,6 @@ class App extends Component {
       <>
         <NavBar/>
         <ItemListContainer title={'Bienvenido'}/>
-        <ItemListContainer title={'Saludo 2'}/>
         <ItemCount/>
 
       </>
