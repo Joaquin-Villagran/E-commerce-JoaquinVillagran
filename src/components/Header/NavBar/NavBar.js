@@ -1,51 +1,28 @@
-import React, { Component } from "react";
-import { Menu } from "semantic-ui-react";
+import React from "react";
 import CartWidget from "../Cart/CartWidget";
-
-class NavBar extends Component {
-  state = {};
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
-  render() {
-    const { activeItem } = this.state;
-
-    return (
-      <Menu stackable>
-        <Menu.Item>
-          <h4>Supermecado JT</h4>
-        </Menu.Item>
-
-        <Menu.Item
-          position="right"
-          name="Home"
-          active={activeItem === "Home"}
-          onClick={this.handleItemClick}
-        >
+import { Link } from "react-router-dom";
+import "./navBar.css";
+function NavBar() {
+  return (
+    <nav className='Navigation'>
+      <ul>
+        <img className="logo" src="../logo192.png" alt="Logo del Supermercado" />
+        Supermecado JT
+        <Link className='Link' to="/" position="right" name="Home">
           Home
-        </Menu.Item>
-
-        <Menu.Item
-        
-          name="Información"
-          active={activeItem === "Información"}
-          onClick={this.handleItemClick}
-        >
-          Información
-        </Menu.Item>
-
-        <Menu.Item
-          name="Acerca de"
-          active={activeItem === "Acerca de"}
-          onClick={this.handleItemClick}
-        >
+        </Link>
+        <Link className='Link' to="/Contacto" name="Contacto">
+          Contacto
+        </Link>
+        <Link className='Link' to="/Acerca" name="Acerca de">
           Acerca de
-        </Menu.Item>
-        <Menu.Item>
+        </Link>
+        <Link className='Link'>
           <CartWidget />
-        </Menu.Item>
-      </Menu>
-    );
-  }
+        </Link>
+      </ul>
+    </nav>
+  );
 }
+
 export default NavBar;

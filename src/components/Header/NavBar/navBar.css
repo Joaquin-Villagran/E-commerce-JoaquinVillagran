@@ -1,41 +1,23 @@
+.Navigation {
+	display: flex;
+	background: #000;
+}
+
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    text-align: center;
-    
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+}
+.logo{
+    width: 100px;
+}
+.Link
+{    color: ivory;
+	list-style-type: none;
+	font-size: 20px;
+}
+.Link:hover {
+    color: white; font-size: 15px; font-family: arial; text-decoration: none
 }
 
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: #111;
-}
-
-.active {
-    background-color: #04aa6d;
-}
-h1 {
-    text-align: center;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
-        sans-serif;
-}
-h4 {
-    margin-top: 5px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-
-    color: #ffff;
-}

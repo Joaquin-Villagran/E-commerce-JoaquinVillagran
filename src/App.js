@@ -1,10 +1,7 @@
 import React from "react";
 import "./App.css";
 //Componentes
-import NavBar from "./components/Header/NavBar/NavBar";
-import ItemCount from "./components/body/ItemListContainer/ItemCount/ItemCount";
-import Item from "./components/body/ItemListContainer/Item/item";
-
+import Views from "./views/Views";
 //Semantic UI
 
 //Componentees de tipo CLASE
@@ -14,9 +11,7 @@ import Item from "./components/body/ItemListContainer/Item/item";
 function App() {
   return (
     <>
-      <NavBar />
-      <Item />
-      <ItemCount />
+      <Views/>
     </>
   );
 }

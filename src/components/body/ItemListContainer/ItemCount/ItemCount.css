@@ -1,6 +1,7 @@
 .btn{
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    margin: 0;
-    margin-left: 2rem;
+    margin: 30px;;
     font-size: 30px;
 }
