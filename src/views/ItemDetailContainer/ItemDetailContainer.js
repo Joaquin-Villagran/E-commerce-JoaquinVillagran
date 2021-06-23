@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Card, Image } from "semantic-ui-react";
-import "./ItemList.css";
-import {Link} from "react-router-dom"
+import ItemDetail from "./ItemDetail/ItemDetail";
+import { Link } from "react-router-dom";
 
-const ItemList = ({ data }) => {
+function ItemDetailContainer() {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -67,20 +66,20 @@ const ItemList = ({ data }) => {
   }, []);
 
   return (
-    <div className="ItemList-container">
-      {productos.map((data) => (
-        <Link>
-          <Card key={data.id}>
-            <Image src={data.img} />
-            <Card.Content>
-              <Card.Header>{data.name}</Card.Header>
-              <Card.Description>{data.descripcion}</Card.Description>
-            </Card.Content>
-            <Card.Content extra>{"$" + data.precio}</Card.Content>
-          </Card>
-        </Link>
-      ))}
-    </div>
-  );
-};
-export default ItemList;
+   <div>
+     {
+       productos.map((data)=>{
+         return(
+           <div  key={data.id}>
+             <Link to={`/ItemDetail/${data.id}`}>
+                <ItemDetail data={data}/>
+             </Link>
+           </div>
+         )
+       })
+     }
+   </div>
+   
+  )
+}
+export default ItemDetailContainer;

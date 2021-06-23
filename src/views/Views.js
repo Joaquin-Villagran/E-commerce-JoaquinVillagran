@@ -3,7 +3,7 @@ import React from "react";
 import Home from "./Home/Home";
 import Acerca from "./AcercaDe/Acerca";
 import Contacto from "./Contacto/Contacto";
-import Detalles from "./Detalles/Detalles";
+import ItemDetailContainer from "./ItemDetailContainer/ItemDetailContainer";
 //Componentes
 import Navbar from "../components/Header/NavBar/NavBar";
 //REACT-ROuter-DOM
@@ -18,7 +18,7 @@ function Views() {
             <Route path='/' exact component={Home}/>
             <Route path='/Acerca'  component={Acerca}/>
             <Route path='/Contacto'  component={Contacto}/>
-            <Route path='/detail/:id'  component={Detalles}/>
+            <Route path='/ItemDetailContainer/:id'  component={ItemDetailContainer}/>
         </Switch>
       </div>
     </Router>
