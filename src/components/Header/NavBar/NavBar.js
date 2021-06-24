@@ -2,6 +2,7 @@ import React from "react";
 import CartWidget from "../Cart/CartWidget";
 import { Link } from "react-router-dom";
 import "./navBar.css";
+
 function NavBar() {
   return (
     <nav className='Navigation'>

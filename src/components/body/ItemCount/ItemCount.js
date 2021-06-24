@@ -3,8 +3,8 @@ import { Grid, Segment } from 'semantic-ui-react'
 import './ItemCount.css'
 import { Button } from "semantic-ui-react";
 
-  const ItemCount =({stock,onAdd,initial,minValue,maxValue})=>{
-    const [cantidad, setCantidad] = useState(0);
+  const ItemCount =({onAdd})=>{
+    const [cantidad, setCantidad] = useState([]);
 
     const handleUp = () => {
       setCantidad(cantidad + 1);
@@ -18,12 +18,12 @@ import { Button } from "semantic-ui-react";
         <Grid.Column width={3} >
           <Segment textAlign="center">
               <h1  >Contador</h1>
-            <Button  positive onClick={handleUp}>+</Button >
-            <Button  negative onClick={handleDown}>-</Button>
+            <Button  positive disabled= {cantidad >= 6} onClick={handleUp}>+</Button >
+            <Button  negative disabled= {cantidad <= 0} onClick={handleDown}>-</Button>
             <div className="btn" >{cantidad}</div>
 
             <hr/>
-            <Button primary onClick= {()=>onAdd(cantidad)}
+            <Button primary onClick= {()=>onAdd=(alert("Un total de: "+cantidad+" productos"))}
                 >Agregar Al Carrito</Button>
           </Segment>
         </Grid.Column>

@@ -1,25 +1,23 @@
-import React from 'react';
-import ItemCount from './ItemCount/ItemCount';
-import ItemList from './ItemList/ItemList';
-
-
+import React, { useState, useEffect, Fragment } from "react";
+import ItemList from "../ItemList/ItemList";
+import axios from "axios";
+import './ItemListContainer.css'
 
 const ItemListContainer = () => {
-    const onAdd=(cantidad) =>{
-        alert('Agregar al carrito: '+cantidad+' Productos');    
-    }
-    return (  
-        <>
-        <ItemList />
-        <ItemCount stock="6" 
-                    initial="0"
-                    minValue='0'
-                    maxValue="6"
-                    onAdd={onAdd}/>
+  const [productos, setProductos] = useState([]);
 
-        </>
-        
-    );
-}
- 
+  useEffect(() => {
+    axios('https://supermercado-8107a-default-rtdb.firebaseio.com/productos.json').then((res) => {
+        // console.log(res.data);
+        setProductos(res.data);
+    });
+}, []);
+
+  return (
+    <Fragment className="ItemListContainer">
+        <ItemList productos={productos} />
+    </Fragment>
+  );
+};
+
 export default ItemListContainer;
