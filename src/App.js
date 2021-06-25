@@ -1,8 +1,8 @@
 import React from "react";
 //Views
 import Home from "./views/Home/Home";
-import Acerca from "./views/AcercaDe/Acerca";
-import Contacto from "./views/Contacto/Contacto";
+import Almacen from "./views/Almacen/Almacen";
+import Bebidas from "./views/Bebidas/Bebidas";
 //Componentes
 import Navbar from "./components/Header/NavBar/NavBar";
 import ItemDetailContainer from "./components/body/ItemDetailContainer/ItemDetailContainer";
@@ -20,9 +20,9 @@ function App() {
         <Navbar/>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/Acerca" component={Acerca} />
-          <Route path="/Contacto" component={Contacto} />
-          <Route path="/detail/:id" component={ItemDetailContainer} />
+          <Route path="/Almacen" component={Almacen} />
+          <Route path="/Bebidas" component={Bebidas} />
+          <Route path="/id/:id" component={ItemDetailContainer} />
         </Switch>
       </div>
     </Router>

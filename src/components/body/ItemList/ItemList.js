@@ -1,14 +1,22 @@
 import React from "react";
+import { Card, Image } from "semantic-ui-react";
 import "./ItemList.css";
-import Product from "../Product/Product";
 
-
-const ItemList = ({ productos }) => {
- return(
-   <div className="ItemList-container">
-     {productos.map(item=> <Product  key={item.id} item={item}/>)}
-   </div>
- );
-}
+const ItemList = ({ data }) => {
+  return (
+    <div className="ItemList-container">
+      <Card style={{ width: 300 }}>
+        <Image src={data.img} wrapped ui={false} />
+        <Card.Content>
+          <Card.Header>{data.name}</Card.Header>
+          <Card.Meta>
+            <span className="date">{data.descripcion}</span>
+          </Card.Meta>
+          <Card.Description>Precio: ${data.precio}</Card.Description>
+        </Card.Content>
+      </Card>
+    </div>
+  );
+};
 
 export default ItemList;

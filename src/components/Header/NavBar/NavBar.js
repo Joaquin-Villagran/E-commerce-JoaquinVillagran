@@ -5,20 +5,24 @@ import "./navBar.css";
 
 function NavBar() {
   return (
-    <nav className='Navigation'>
+    <nav className="Navigation">
       <ul>
-        <img className="logo" src="../logo192.png" alt="Logo del Supermercado" />
+        <img
+          className="logo"
+          src="../logo192.png"
+          alt="Logo del Supermercado"
+        />
         Supermecado JT
-        <Link className='Link' to="/" position="right" name="Home">
+        <Link className="Link" to="/" position="right" name="Home">
           Home
         </Link>
-        <Link className='Link' to="/Contacto" name="Contacto">
-          Contacto
+        <Link to="/Almacen" className="active Link">
+          Almacen
         </Link>
-        <Link className='Link' to="/Acerca" name="Acerca de">
-          Acerca de
+        <Link to="/Bebidas" className="active Link">
+          Bebidas
         </Link>
-        <Link className='Link'>
+        <Link className="Link">
           <CartWidget />
         </Link>
       </ul>

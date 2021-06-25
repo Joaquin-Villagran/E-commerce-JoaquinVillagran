@@ -1,23 +1,33 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
-import axios from "axios";
-import './ItemListContainer.css'
+import "./ItemListContainer.css";
+import { Link } from "react-router-dom";
 
-const ItemListContainer = () => {
-  const [productos, setProductos] = useState([]);
+function ItemListContainer({match}) {
+  const [cate, setCate] = useState([]);
+  const catID=match;
 
   useEffect(() => {
-    axios('https://supermercado-8107a-default-rtdb.firebaseio.com/productos.json').then((res) => {
-        // console.log(res.data);
-        setProductos(res.data);
-    });
-}, []);
+    fetch(
+      `https://supermercado-8107a-default-rtdb.firebaseio.com/Productos.json`
+    )
+      .then((res) => res.json())
+      .then((dataApi) => setCate(dataApi));
+  }, [catID]);
 
   return (
-    <Fragment className="ItemListContainer">
-        <ItemList productos={productos} />
-    </Fragment>
+    <div>
+      {cate.map((char) => {
+        return (
+          <div key={char.id} className="CharacterCard-Container">
+            <Link to={`/id/${char.id}`}>
+              <ItemList data={char} />
+            </Link>
+          </div>
+        );
+      })}
+    </div>
   );
-};
+}
 
 export default ItemListContainer;
