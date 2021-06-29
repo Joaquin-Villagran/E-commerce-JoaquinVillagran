@@ -1,7 +1,13 @@
-.ItemList-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	justify-content: end;
-	column-gap: 60px;
-    margin: 70px;
+.ItemList-container{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: rgb(0, 0, 0) thin solid;
+    box-shadow:  20px 20px 60px #050505,
+                -20px -20px 60px #000000;
 }

@@ -1,12 +1,11 @@
-import React from 'react'
-import ItemListContainer from '../../components/body/ItemListContainer/ItemListContainer';
+import React from "react";
+import ItemListContainer from "../../components/body/ItemListContainer/ItemListContainer";
 
 function Home() {
-    
-    return (
-        <div>            
-            <ItemListContainer/>
-        </div>
-    )
+  return (
+    <div>
+      <ItemListContainer />
+    </div>
+  );
 }
 export default Home;
