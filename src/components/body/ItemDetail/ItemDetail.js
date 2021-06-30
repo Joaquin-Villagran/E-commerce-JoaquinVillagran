@@ -9,9 +9,9 @@ const ItemDetail = ({ data }) => {
         <Card.Content>
           <Card.Header>{data.name}</Card.Header>
           <Card.Meta>
-            <span>{data.descripcion}</span>
+            <span>{data.birthday}</span>
           </Card.Meta>
-          <Card.Description>Precio: ${data.precio}</Card.Description>
+          <Card.Description>{data.status}</Card.Description>
         </Card.Content>
       </Card>
     </section>
